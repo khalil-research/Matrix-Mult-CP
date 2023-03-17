@@ -1,6 +1,14 @@
 # Matrix Multiplication using Constraint Programming
 
-Table for square matrices
+Overleaf link for symmetry pruning: https://www.overleaf.com/5527138239pnfvrpxzcmfj
+
+To-Do:
+- Read and Implement symmetry handling
+- Matrix multiplication constraints for specific matrices (diagonal, upper triangular, skew, etc...)
+- Parralelization with Compute Canada
+- In the case of infeasibility, how to generate a proof
+
+## Table for square matrices
 
 Size (n,m,p) | Best known Rank | Our rank | Time | # branches | # fails 
 --- | --- | --- | --- | --- | --- 
@@ -9,7 +17,7 @@ Size (n,m,p) | Best known Rank | Our rank | Time | # branches | # fails
 (4,4,4) | 47 | N/A | N/A | N/A | N/A
 (5,5,5) | 96 | N/A | N/A | N/A | N/A
 
-Table for square matrices using cyclic symmetry constraint
+## Table for square matrices using cyclic invariance constraint
 R = S + 3*T
 
 Size (n,m,p) | Best known Rank | Our rank | S | T | Time | # branches | # fails 
@@ -17,7 +25,7 @@ Size (n,m,p) | Best known Rank | Our rank | S | T | Time | # branches | # fails
 (2,2,2) | 7 | 7 | 1 | 2 | 0.14 | 12578 | 6086
 (2,2,2) | 7 | 7 | 4 | 1 | 0.62 | 57728 | 28003
 
-Table for non-square matrices
+## Table for non-square matrices
 Size (n,m,p) | Best known Rank | Our rank | Time (seconds) | # branches | # fails
 --- | --- | --- | --- | --- | ---
 (2,2,3) | 11 | 11 | 122.67 | 8094049 | 3666016
