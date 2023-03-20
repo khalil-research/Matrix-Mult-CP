@@ -25,6 +25,17 @@ Size (n,m,p) | Best known Rank | Our rank | S | T | Time | # branches | # fails
 (2,2,2) | 7 | 7 | 1 | 2 | 0.14 | 12578 | 6086
 (2,2,2) | 7 | 7 | 4 | 1 | 0.62 | 57728 | 28003
 
+
+## Table for square matrices to check infeasibility
+
+Size (n,m,p) | Rank | Time (seconds) | # branches | # fails 
+--- | --- | --- | --- | --- 
+(2,2,2) | 1 | 0.03 | 14 | 7 
+(2,2,2) | 2 | 0.04 | 354 | 177
+(2,2,2) | 3 | 0.79 | 87053 | 42786
+(2,2,2) | 4 | 213.03 | 16164001 | 7974169
+
+
 ## Table for non-square matrices
 Size (n,m,p) | Best known Rank | Our rank | Time (seconds) | # branches | # fails
 --- | --- | --- | --- | --- | ---
