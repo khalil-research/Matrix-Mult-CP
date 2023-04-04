@@ -1,8 +1,5 @@
 import numpy as np
 
-
-
-
 def general_multiplication_tensor(N, M, P):
    """Multiplication tensor.
    The multiplication tensor T in {0,1} of size NM x MP x PN
@@ -35,20 +32,20 @@ def expand_pd(U, V, W):
 
 
 
-def test_if_U_V_W_is_correct(N,M,P,R,U,V,W,T_n):
+def test_if_U_V_W_is_correct(N,M,P,R,solution,T_n):
     ''' Checks if U,V,W found by CP formulation is a true correct low rank decomposition of T_n 
         Returns True if correct else False'''
-   
+    sol,U,V,W = solution
     U_sol = np.zeros((M*N,R))
     V_sol = np.zeros((P*M,R))
     W_sol = np.zeros((P*N,R))
     
     for i in range(M*N):
-      for r in range(R):        U_sol[i,r] = sol[U[i][r]]
+      for r in range(R):        U_sol[i,r] = sol[U[r][i]]
     for i in range(P*M):
-      for r in range(R):        V_sol[i,r] = sol[V[i][r]]
+      for r in range(R):        V_sol[i,r] = sol[V[r][i]]
     for i in range(P*N):
-      for r in range(R):        W_sol[i,r] = sol[W[i][r]]
+      for r in range(R):        W_sol[i,r] = sol[W[r][i]]
       
     
     t_constraint_programming = expand_pd(U_sol, V_sol, W_sol)
