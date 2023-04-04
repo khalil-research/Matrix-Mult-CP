@@ -28,6 +28,12 @@ def CP_general(N,M,P,T,R,valid_ineq,symmetry,inexact_ineq,seed):
                 mdl.add(u[r][0]<=0)
                 for i in range(1, N*M):
                     mdl.add(u[r][i] <= mdl.sum(mdl.abs(u[r][ip]) for ip in range(i)))
+                    
+                # constraint one set first index 
+                mdl.add(w[r][0]<=0)
+                for i in range(1, N*P):
+                    mdl.add(w[r][i] <= mdl.sum(mdl.abs(w[r][ip]) for ip in range(i)))
+
 
 
     ## Valid Inequalities
