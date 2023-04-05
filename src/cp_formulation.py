@@ -57,12 +57,12 @@ def CP_general(N,M,P,T,R,valid_ineq,symmetry,inexact_ineq,seed):
               # Lower bound on the number of active products
               mdl.add(mdl.sum(mdl.sum(mdl.abs(u[r][i]) for i in range(N*M)) * mdl.sum(mdl.abs(v[r][j]) for j in range(M*P)) for r in range(R)) >= M*N*P)
               # 6) Each product of the form $A_{i,j}B_{j,k}$ must appear in at least one of the $R$ terms  
-              for i in range(M*P):
+              '''for i in range(M*P):
                   for j in range(P*N):
                       A_col_idx = (i+1) % P #GOOD
                       B_row_idx = math.floor((1.0*j)/N)
                       if A_col_idx == B_row_idx:
-                        mdl.add(mdl.sum(mdl.abs(u[r][i]*v[r][j]) for r in range(R)) >= 1)
+                        mdl.add(mdl.sum(mdl.abs(u[r][i]*v[r][j]) for r in range(R)) >= 1)'''
     ## Inexact Inqualities
     if inexact_ineq:
             pass
