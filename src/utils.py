@@ -29,28 +29,3 @@ def expand_pd(U, V, W):
                 for r in range(R):
                     T[i, j, k] += U[i, r] * V[j, r] * W[k, r]
     return T
-
-
-
-def test_if_U_V_W_is_correct(N,M,P,R,solution,T_n):
-    ''' Checks if U,V,W found by CP formulation is a true correct low rank decomposition of T_n 
-        Returns True if correct else False'''
-    sol,U,V,W = solution
-    U_sol = np.zeros((M*N,R))
-    V_sol = np.zeros((P*M,R))
-    W_sol = np.zeros((P*N,R))
-    
-    for i in range(M*N):
-      for r in range(R):        U_sol[i,r] = sol[U[r][i]]
-    for i in range(P*M):
-      for r in range(R):        V_sol[i,r] = sol[V[r][i]]
-    for i in range(P*N):
-      for r in range(R):        W_sol[i,r] = sol[W[r][i]]
-      
-    
-    t_constraint_programming = expand_pd(U_sol, V_sol, W_sol)
-
-    if (t_constraint_programming==T_n).all():
-      return True
-    else:
-      return False
