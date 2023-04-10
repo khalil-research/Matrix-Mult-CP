@@ -47,3 +47,14 @@ Size (n,m,p) | Best known Rank | Our rank | Time (seconds) | # branches | # fail
 (2,3,5) | 25 | N/A | N/A | N/A | N/A
 (2,4,4) | 26 | N/A | N/A | N/A | N/A
 (3,3,4) | 29 | N/A | N/A | N/A | N/A
+
+## Environment Setup
+1. Follow [this](https://docs.alliancecan.ca/wiki/CPLEX/en) to download and install the proper CPLEX version.
+2. Edit `scripts/env.config` according to your environment.
+3. `source scripts/create_env.sh` to create the VENV environment.
+
+## Running the Code
+1. Activate the VENV: `source scripts/activate_env.sh`.
+2. Run `src/main.py N M P R {cpo,sat}`. You can specify the solver `cpo` vs `sat` and pass solver specific args.
+    - e.g.: `src/main.py 2 2 2 7 cpo --seed 5`
+
