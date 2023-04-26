@@ -2,13 +2,14 @@ from utils import general_multiplication_tensor
 from model.base import CPModelBase
 
 from docplex.cp.model import CpoModel
-import numpy as np
-import math
+
 
 
 def add_cpo_args(parser):
     parser.add_argument('--log_period', type=int, default=100000, dest="cpo_LogPeriod")
     parser.add_argument('--seed', type=int, default=4, dest="cpo_RandomSeed")
+    # parser.add_argument('--verbose', type=int, default=0, dest='cpo_ctx_verbose')
+    # parser.add_argument('--verbose', type=int, default=0, dest='cpo_ctx_verbose')
 
 class CPOpt(CPModelBase):
 
@@ -85,25 +86,16 @@ class CPOpt(CPModelBase):
         if self.inexact_ineq:
                 pass
 
+    def seed(self, s):
+        params = self.mdl.get_parameters()
+        params['RandomSeed'] = s
+        self.solver_params(params)
 
     def solver_params(self, args_dict):
         self.mdl.set_parameters(args_dict)
 
 
-    def solve(self, validate=True):
-        sol = self.mdl.solve()
-        if sol:
-            if validate:
-                if self._validate(sol):
-                    print("Model is valid")
-                else:
-                    print("Model is invalid")
-
-                return sol
-            else:
-                return sol
-        else:
-            print("Infeasible")
-            return -1
+    def solve(self):
+        return self.mdl.solve()
 
 

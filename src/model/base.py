@@ -18,7 +18,6 @@ class CPModelBase:
         self.V = None
         self.W = None
         self._mdl = self._build_model()
-        print("N, M, P, R")
 
     def __call__(self):
         return self._mdl
@@ -29,10 +28,13 @@ class CPModelBase:
     def solver_params(self, name, val=None):
         raise NotImplementedError
 
-    def solve(self, validate=True):
+    def seed(self, s):
         raise NotImplementedError
 
-    def _validate(self, sol):
+    def solve(self):
+        raise NotImplementedError
+
+    def validate(self, sol):
         U_sol = np.zeros((self.M*self.N,self.R))
         V_sol = np.zeros((self.P*self.M,self.R))
         W_sol = np.zeros((self.P*self.N,self.R))
