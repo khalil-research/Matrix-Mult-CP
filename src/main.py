@@ -66,7 +66,7 @@ if __name__ == "__main__":
     executor = submitit.AutoExecutor(folder=args.output_dir)
 
     executor.update_parameters(
-        name=f"mat_mult_{args.N}_{args.M}_{args.P}_{args.R}",
+        name=f"mult_{args.N}_{args.M}_{args.P}_{args.R}",
         slurm_account="def-khalile2",
         tasks_per_node=args.n_seeds,
         cpus_per_task=args.n_workers,

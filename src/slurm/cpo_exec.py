@@ -12,6 +12,7 @@ class CPO_Executor(SLURM_Executor):
         super().__init__(args, solver_args)
 
         self.cp_model = CPOpt(args.N, args.M, args.P, args.R)
+        solver_args["Workers"] = args.n_workers
         self.cp_model.solver_params(solver_args)
 
 
