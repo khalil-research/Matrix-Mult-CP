@@ -24,7 +24,8 @@ class CPO_Executor(SLURM_Executor):
         print(sol.get_solve_status())
 
         # A hack coz os.getenv("SLURM_JOB_ID") & os.getenv("SLURM_ARRAY_TASK_ID") return None
-        # Apparently only
+        # Also apparently only after the __call__ method is called the resources are allocated and a
+        # task_id assigned. That's why we can't have this in the __init__
         job_env = plugins.get_job_environment()
         self.job_id  = job_env.job_id
         self.task_id = job_env.global_rank

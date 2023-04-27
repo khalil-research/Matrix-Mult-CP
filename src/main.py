@@ -11,6 +11,8 @@ import uuid
 import logging
 import submitit
 import argparse
+from datetime import datetime
+import calendar
 
 
 def parse_args():
@@ -55,7 +57,7 @@ def parse_args():
 
 if __name__ == "__main__":
     args, solver_args = parse_args()
-    subfolder = f"{args.N}_{args.M}_{args.P}_{args.R}_{uuid.uuid4().hex[:8]}"
+    subfolder = f"{args.N}x{args.M}x{args.P}_{args.R}_{calendar.month_abbr[datetime.now().month]}{datetime.today().strftime('%d_%H:%M:%S')}"#_{uuid.uuid4().hex[:8]}"
     args.output_dir = os.path.join(args.output_dir, subfolder)
 
     if (args.solver == 'sat'):
@@ -72,7 +74,7 @@ if __name__ == "__main__":
         cpus_per_task=args.n_workers,
         timeout_min= 2 * 24 * 60, # 2 days
         # slurm_partition=args.slurm_partition
-        # mem_gb=12*args.slurm_ngpus,
+        mem_gb=12,
         # gpus_per_node=args.slurm_ngpus,
         # nodes=args.slurm_nnodes,
     )
