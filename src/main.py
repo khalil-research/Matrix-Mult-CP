@@ -35,9 +35,17 @@ def parse_args():
     parser.add_argument('M', type=int)
     parser.add_argument('P', type=int)
     parser.add_argument('R', type=int)
+    parser.add_argument('--valid_ineq', action='store_true', help="Include valid equalities in the CP model.")
+    parser.add_argument('--no-valid_ineq', dest='valid_ineq', action='store_false')
+    parser.set_defaults(valid_ineq=True)
+    parser.add_argument('--symmetry', action='store_true', help="Include symmetry breaking constrains in the CP model.")
+    parser.add_argument('--no-symmetry', dest='symmetry', action='store_false')
+    parser.set_defaults(symmetry=True)
     parser.add_argument('--output_dir', type=str, default="../logs", help="Output directory base. Logs and solutions go here.")
     parser.add_argument('--n_seeds', type=int, default=1, help="Number of seeds to test in parallel.")
     parser.add_argument('--n_workers', type=int, default=1, help="Number of threads used by the solver.")
+    parser.add_argument('--timeout', type=int, default=10, help="Timeout for the run in minutes. (Default: 10)")
+
 
     subparsers = parser.add_subparsers(help='CP Solver', dest="solver")
     subparsers.required = True
@@ -64,7 +72,6 @@ if __name__ == "__main__":
         print('OR-Tools CP_SAT Solver not available yet.')
         exit(1)
 
-
     executor = submitit.AutoExecutor(folder=args.output_dir)
 
     executor.update_parameters(
@@ -72,9 +79,9 @@ if __name__ == "__main__":
         slurm_account="def-khalile2",
         tasks_per_node=args.n_seeds,
         cpus_per_task=args.n_workers,
-        timeout_min= 2 * 24 * 60, # 2 days
-        # slurm_partition=args.slurm_partition
+        timeout_min= args.timeout + 1, # Giveing solver a minute to terminate gracefully
         mem_gb=12,
+        # slurm_partition=args.slurm_partition
         # gpus_per_node=args.slurm_ngpus,
         # nodes=args.slurm_nnodes,
     )

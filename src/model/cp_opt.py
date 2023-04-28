@@ -6,7 +6,7 @@ from docplex.cp.model import CpoModel
 
 
 def add_cpo_args(parser):
-    parser.add_argument('--log_period', type=int, default=100000, dest="cpo_LogPeriod")
+    parser.add_argument('--log_period', type=int, default=10000000, dest="cpo_LogPeriod")
     parser.add_argument('--seed', type=int, default=4, dest="cpo_RandomSeed")
     # parser.add_argument('--verbose', type=int, default=0, dest='cpo_ctx_verbose')
     # parser.add_argument('--verbose', type=int, default=0, dest='cpo_ctx_verbose')

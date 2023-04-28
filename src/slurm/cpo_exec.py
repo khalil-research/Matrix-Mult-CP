@@ -11,8 +11,11 @@ class CPO_Executor(SLURM_Executor):
     def __init__(self, args, solver_args):
         super().__init__(args, solver_args)
 
-        self.cp_model = CPOpt(args.N, args.M, args.P, args.R)
+        self.cp_model = CPOpt(args.N, args.M, args.P, args.R,
+                            valid_ineq=args.valid_ineq, symmetry=args.symmetry)
+
         solver_args["Workers"] = args.n_workers
+        solver_args["TimeLimit"] = args.timeout * 60
         self.cp_model.solver_params(solver_args)
 
 

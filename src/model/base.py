@@ -5,7 +5,7 @@ import numpy as np
 
 class CPModelBase:
     def __init__(self, N, M, P, R,
-                    valid_ineq=False, symmetry=False, inexact_ineq=False):
+                    valid_ineq=True, symmetry=True, inexact_ineq=False):
         self.N = N
         self.M = M
         self.P = P
