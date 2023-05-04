@@ -10,6 +10,8 @@ source $VENV_HOME/bin/activate
 
 pip install numpy==1.23.0 --no-index
 pip install docplex --no-index
+pip install submitit --no-index
+pip install scipy --no-index
 
 python $STUDIO_ROOT/python/setup.py install
 

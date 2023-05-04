@@ -16,6 +16,31 @@ def general_multiplication_tensor(N, M, P):
                T[a_index, b_index, c_index] = 1
    return T
 
+
+def cyclic_multiplication_tensor(N=2):
+    """Multiplication tensor.
+    The multiplication tensor T of order N is defined by:
+        C == A @ B <=> vec(C) == T x1 vec(A.T) x2 vec(B.T)
+    where A, B, and C are N x N matrices and vec is the column-wise
+    vectorization operator.
+    """
+    T = np.zeros((N ** 2, N ** 2, N ** 2), dtype=np.int64)
+    for n in range(N):
+        for m in range(N):
+            u = np.ravel_multi_index(
+                (n * np.ones(N, dtype=np.int64), np.arange(N)), (N, N))
+            v = np.ravel_multi_index(
+                (np.arange(N), m * np.ones(N, dtype=np.int64)), (N, N))
+            w = np.ravel_multi_index(
+                (m, n), (N, N)) * np.ones(len(u), dtype=np.int64)
+
+            T[u, v, w] = 1
+    # Assert cyclic symmetry.
+    assert np.all(T == np.transpose(T, [2, 0, 1]))
+    assert np.all(T == np.transpose(T, [1, 2, 0]))
+
+    return T
+
 def expand_pd(U, V, W):
     """Expand a polyadic decomposition.
     The polyadic expansion T of the factor matrices U, V, and W is defined by:

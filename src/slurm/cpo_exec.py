@@ -3,6 +3,7 @@ from model.cp_opt import CPOpt
 
 import os
 import random
+import pandas as pd
 
 from submitit.core import plugins
 
@@ -12,14 +13,23 @@ class CPO_Executor(SLURM_Executor):
         super().__init__(args, solver_args)
 
         self.cp_model = CPOpt(args.N, args.M, args.P, args.R,
-                            valid_ineq=args.valid_ineq, symmetry=args.symmetry)
+                            cyclic_invar = args.cyclic_invar, min_add = args.min_add,
+                            inex_bounds=args.inex_bounds, valid_ineq=args.valid_ineq,
+                            symmetry=args.symmetry, inexact_ineq=args.inexact_ineq)
 
         solver_args["Workers"] = args.n_workers
         solver_args["TimeLimit"] = args.timeout * 60
+
+        if self.args.min_add:
+            solver_args["SolutionLimit"] = 1
+
         self.cp_model.solver_params(solver_args)
 
 
     def __call__(self):
+        print("Running with:", self.args)
+        print("Running solver with:", self.solver_args)
+
         if (self.args.n_seeds > 1):
             self.cp_model.seed(random.randint(0, 9999))
 
@@ -33,16 +43,38 @@ class CPO_Executor(SLURM_Executor):
         self.job_id  = job_env.job_id
         self.task_id = job_env.global_rank
 
+        fname = 'local'
+        if self.job_id and self.task_id != None:
+            fname = f"{self.job_id}_{self.task_id}"
+
         if sol:
             if self.cp_model.validate(sol):
                 print("Model is valid")
             else:
                 print("Model is invalid")
 
-            fname = 'local_solution.txt'
-
-            if self.job_id and self.task_id != None:
-                fname = f"{self.job_id}_{self.task_id}_solution.txt"
-            sol_f = os.path.join(self.output_dir, fname)
+            sol_f = os.path.join(self.output_dir, f"{fname}_solution.txt")
             print(f"Saving solution to: {os.path.abspath(sol_f)}")
             sol.write(sol_f)
+
+
+        sol_f = os.path.join(self.output_dir, f"{fname}_stats.csv")
+        print(f"Saving stats to: {os.path.abspath(sol_f)}")
+        stats = {
+            'N': self.args.N,
+            'M': self.args.M,
+            'P': self.args.P,
+            'R': self.args.R,
+            'validineq': self.args.valid_ineq,
+            'symmetry': self.args.symmetry,
+            'min_add': self.args.min_add,
+            'inexactineq': self.args.inexact_ineq,
+            'status': sol.get_solve_status(),
+            'stime': sol.get_infos().get_solve_time(),
+            'ttime': sol.get_infos().get_total_time(),
+            'mem': sol.get_infos().get_memory_usage(),
+            'numfail': sol.get_infos().get_number_of_fails(),
+            'numbranch': sol.get_infos().get_number_of_branches()
+            }
+        df = pd.DataFrame.from_dict([stats])
+        df.to_csv(sol_f)
