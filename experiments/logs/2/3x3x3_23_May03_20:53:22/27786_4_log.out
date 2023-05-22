@@ -1,0 +1,82 @@
+submitit INFO (2023-05-03 20:53:25,526) - Starting with JobEnvironment(job_id=27786, hostname=cpunode2, local_rank=4(5), node=0(1), global_rank=4(5))
+submitit INFO (2023-05-03 20:53:25,527) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/5/3x3x3_23_May03_20:53:22/27786_submitted.pkl
+Running with: Namespace(N=3, M=3, P=3, R=23, valid_ineq=False, symmetry=False, min_add=False, cyclic_invar=True, inex_bounds=[9, 10], output_dir='../logs/5/3x3x3_23_May03_20:53:22', n_seeds=5, n_workers=20, timeout=2880, solver='cpo', cpo_LogPeriod=10000000, cpo_RandomSeed=4, inexact_ineq=True)
+Running solver with: {'LogPeriod': 10000000, 'RandomSeed': 4, 'Workers': 20, 'TimeLimit': 172800}
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 207 variables, 761 constraints
+ ! TimeLimit            = 172800
+ ! Workers              = 20
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 1668
+ ! Initial process time : 0.09s (0.09s extraction + 0.00s propagation)
+ !  . Log search space  : 328.1 (before), 328.1 (after)
+ !  . Memory usage      : 5.5 MB (before), 5.5 MB (after)
+ ! Using parallel search with 20 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+                   10000k          5    2        -1 != D4_4
+                   10000k          5    6         0  = C5_5
+                   10000k          5    9         0  = D4_5
+                   10000k          5    4   F    -1  = B1_2
+                   10000k          6    1        -1 != B8_4
+                   10000k          5   17   F     1  = D5_2
+                   10000k          3   13         0  = B0_5
+                   10000k          5    5         1  = D3_4
+                   10000k          7    3   F    -1  = D0_2
+                   10000k         21    7         0  = D8_5
+                   10000k         29   15         0 != C5_3
+                   10000k         22   11   F    -1  = B0_0
+                   10000k         22   19   F     0  = D3_1
+                   10000k         43   12            -
+                   10000k         16   18   F     1  = C4_2
+                   10000k         26   10            -
+                   10000k         10    8   F     0 != B0_2
+                   10000k         13   20   F     1  = B1_5
+                   10000k         12   16         1 != D6_3
+                   10000k         10   14   F    -1  = A7_1
+ ! Time = 2296.75s, Average fail depth = 21, Memory usage = 162.2 MB
+ !               Branches  Non-fixed    W       Branch decision
+                   20000k          5    6   F     1 != C2_2
+                   20000k          3    9         1 != C4_3
+                   20000k          5    2   F     1 != D6_3
+                   20000k          5   17         0  = D3_2
+                   20000k          6    1        -1 != B2_1
+                   20000k          5    4   F     1 != D5_3
+                   20000k          5    5   F     1 != C2_1
+                   20000k          3   13   F     0  = B7_4
+                   20000k         42   19   F     0  = D7_5
+                   20000k         34    3        -1 != A8_0
+                   20000k         22   15         1 != B2_5
+                   20000k         37   11         0  = D8_2
+                   20000k         33    7   F     0  = C6_3
+                   20000k         44   12   F     0 != D6_2
+                   20000k         39   18   F    -1 != C1_3
+                   20000k         39   14            -
+                   20000k         15   10         0  = B7_1
+                   20000k         13    8   F     0  = A2_2
+                   20000k         34   16         0 != C1_4
+                   20000k         41   20         1  = C1_1
+ ! Time = 4524.50s, Average fail depth = 23, Memory usage = 210.7 MB
+ !               Branches  Non-fixed    W       Branch decision
+                   30000k          5    6         0 != B8_3
+                   30000k          3    4   F    -1 != B4_1
+                   30000k          3    9   F    -1  = B2_2
+                   30000k          5    5         1  = B7_3
+                   30000k          4    1   F     1 != A2_4
+                   30000k          5   17   F     1  = D5_4
+                   30000k          5    2         0 != C2_4
+                   30000k          3   13   F    -1 != A6_1
+                   30000k         23   15         0 != D8_0
+                   30000k         50   19         0  = A0_1
+                   30000k         42    3   F     0 != D6_3
+                   30000k         31   11   F     0  = C8_5
+                   30000k         26    7   F     0  = D8_0
+                   30000k         46   10   F     0  = D1_0
+                   30000k         43   12        -1  = B0_4
+                   30000k         28   14        -1 != B3_4
+                   30000k         38   18        -1 != C2_4
+                   30000k         17    8         1 != C7_0
+                   30000k         30   20   F     1  = A3_0
+                   30000k         34   16   F        -
+ ! Time = 6704.22s, Average fail depth = 23, Memory usage = 210.7 MB
+ !               Branches  Non-fixed    W       Branch decision

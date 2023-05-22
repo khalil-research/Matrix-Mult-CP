@@ -1,0 +1,34 @@
+submitit INFO (2023-05-02 18:49:40,313) - Starting with JobEnvironment(job_id=27734, hostname=cpunode3, local_rank=2(5), node=0(1), global_rank=2(5))
+submitit INFO (2023-05-02 18:49:40,313) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/4/2x2x3_11_May02_18:49:38/27734_submitted.pkl
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 176 variables, 144 constraints
+ ! TimeLimit            = 7200
+ ! Workers              = 8
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 2050
+ ! Initial process time : 0.02s (0.02s extraction + 0.00s propagation)
+ !  . Log search space  : 279.0 (before), 279.0 (after)
+ !  . Memory usage      : 821.3 kB (before), 821.3 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+                   10000k          3    1   F     0  = U7_3
+                   10000k          3    6   F     0  = W2_4
+                   10000k          4    5         0  = W10_4
+                   10000k          5    4         0  = W6_3
+                   10000k          3    2         1 != V7_4
+ *                 10222k  113.88s      1         1  = V10_2
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 79554050
+ ! Number of fails        : 36879697
+ ! Total memory usage     : 74.8 MB (74.7 MB CP Optimizer + 0.1 MB Concert)
+ ! Time spent in solve    : 113.88s (113.87s engine + 0.02s extraction)
+ ! Search speed (br. / s) : 698639.2
+ ! ----------------------------------------------------------------------------
+Feasible
+Model is valid
+Saving solution to: /h/30/pashootan/Matrix-Mult-CP/logs/4/2x2x3_11_May02_18:49:38/27734_2_solution.txt
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/4/2x2x3_11_May02_18:49:38/27734_2_stats.csv
+submitit INFO (2023-05-02 18:51:34,846) - Job completed successfully

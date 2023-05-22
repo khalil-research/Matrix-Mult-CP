@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Model constraints: 1, variables: integer: 3, interval: 0, sequence: 0
+Solve status: Feasible
+Search status: SearchCompleted, stop cause: SearchHasNotBeenStopped
+Solve time: 0 sec
+-------------------------------------------------------------------------------
+Variables:
+   U0_0 = 1
+   V0_0 = -1
+   W0_0 = -1

@@ -1,0 +1,8 @@
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=27807.0. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: cpunode2: task 1: Out Of Memory
+submitit WARNING (2023-05-04 19:06:47,414) - Bypassing signal SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 27807.0 ON cpunode2 CANCELLED AT 2023-05-04T19:06:47 ***
+submitit WARNING (2023-05-04 19:06:47,422) - Bypassing signal SIGTERM
+slurmstepd: error: *** JOB 27807 ON cpunode2 CANCELLED AT 2023-05-04T19:06:47 ***
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=27807.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.

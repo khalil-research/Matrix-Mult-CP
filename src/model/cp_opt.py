@@ -114,7 +114,7 @@ class CPOpt(CPModelBase):
         if self.N == 2:
             S = 4
         elif self.N == 3:
-            S = 4
+            S = 5
         elif self.N == 4:
             S = 12
         else:

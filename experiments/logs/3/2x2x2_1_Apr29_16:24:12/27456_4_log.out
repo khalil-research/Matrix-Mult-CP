@@ -1,0 +1,33 @@
+submitit INFO (2023-04-29 16:24:13,763) - Starting with JobEnvironment(job_id=27456, hostname=cpunode3, local_rank=4(5), node=0(1), global_rank=4(5))
+submitit INFO (2023-04-29 16:24:13,763) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/2x2x2_1_Apr29_16:24:12/27456_submitted.pkl
+/h/30/pashootan/Matrix-Mult-CP/src/model/cp_opt.py:65(stream:96:18): Warning: The constraint is always false, the model is infeasible.
+                                                                                sum([abs(W0_0)]) >= 2
+/h/30/pashootan/Matrix-Mult-CP/src/model/cp_opt.py:65(stream:102:18): Warning: The constraint is always false, the model is infeasible.
+                                                                                 sum([abs(W0_1)]) >= 2
+/h/30/pashootan/Matrix-Mult-CP/src/model/cp_opt.py:65(stream:108:18): Warning: The constraint is always false, the model is infeasible.
+                                                                                 sum([abs(W0_2)]) >= 2
+/h/30/pashootan/Matrix-Mult-CP/src/model/cp_opt.py:65(stream:114:18): Warning: The constraint is always false, the model is infeasible.
+                                                                                 sum([abs(W0_3)]) >= 2
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 12 variables, 84 constraints
+ ! TimeLimit            = 172800
+ ! Workers              = 8
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 1529
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 19.0 (before), 19.0 (after)
+ !  . Memory usage      : 267.4 kB (before), 267.4 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+ ! ----------------------------------------------------------------------------
+ ! Search completed, model has no solution.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 0
+ ! Number of fails        : 0
+ ! Total memory usage     : 706.5 kB (666.1 kB CP Optimizer + 40.4 kB Concert)
+ ! Time spent in solve    : 0.00s (0.00s engine + 0.00s extraction)
+ ! ----------------------------------------------------------------------------
+Infeasible
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/2x2x2_1_Apr29_16:24:12/27456_4_stats.csv
+submitit INFO (2023-04-29 16:24:14,205) - Job completed successfully

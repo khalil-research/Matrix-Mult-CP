@@ -1,0 +1,2 @@
+,N,M,P,R,validineq,symmetry,min_add,inexactineq,status,stime,ttime,mem,numfail,numbranch
+0,2,1,2,4,False,False,False,False,Feasible,0.01,0.01,4630044,2269,4907

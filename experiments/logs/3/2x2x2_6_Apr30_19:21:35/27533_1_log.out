@@ -1,0 +1,627 @@
+submitit INFO (2023-04-30 19:21:39,061) - Starting with JobEnvironment(job_id=27533, hostname=cpunode3, local_rank=1(5), node=0(1), global_rank=1(5))
+submitit INFO (2023-04-30 19:21:39,061) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/2x2x2_6_Apr30_19:21:35/27533_submitted.pkl
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 72 variables, 184 constraints
+ ! TimeLimit            = 7200
+ ! Workers              = 8
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 7270
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 114.1 (before), 114.1 (after)
+ !  . Memory usage      : 535.3 kB (before), 535.3 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+                   10000k          4    1   F     1  = W5_0
+                   10000k          5    2   F     0  = W2_1
+                   10000k          5    8        -1  = V5_3
+                   10000k          5    6        -1 != W4_1
+                   10000k          5    5         1  = U5_2
+                   10000k          7    3        -1  = W2_1
+                   10000k          8    7   F    -1  = V1_2
+                   10000k          5    4   F    -1 != U3_3
+                   20000k          4    1   F     1 != U4_1
+                   20000k          5    8        -1 != U3_2
+                   20000k          5    2   F     1 != W4_3
+                   20000k          4    6         0  = W4_3
+                   20000k          9    7   F     0  = U5_0
+                   20000k          5    4   F     0 != V5_0
+                   20000k          5    5   F     1  = U3_0
+                   20000k          7    3   F     1 != W1_2
+                   30000k          5    8        -1 != U2_3
+                   30000k          4    1         1 != U5_0
+                   30000k          6    7   F    -1  = U5_2
+                   30000k          4    6   F    -1  = U2_1
+ ! Time = 316.18s, Average fail depth = 14, Memory usage = 192.1 MB
+ !               Branches  Non-fixed    W       Branch decision
+                   30000k          5    2   F     0 != W5_3
+                   30000k          4    5   F    -1 != W5_3
+                   30000k         10    3   F     0  = U1_2
+                   30000k          5    4   F     1  = W5_2
+                   40000k          5    8         0  = W5_2
+                   40000k          4    1   F     0  = V3_1
+                   40000k          4    6   F     0  = W5_0
+                   40000k          6    3         1  = W2_0
+                   40000k          4    5   F     0  = V4_3
+                   40000k          6    7         0  = U3_0
+                   40000k          5    4         0 != V0_0
+                   40000k          8    2         1 != W1_3
+                   50000k          5    8            -
+                   50000k          4    1   F     1  = W5_1
+                   50000k          4    6         0 != U1_0
+                   50000k          6    3   F     0  = U4_2
+                   50000k          7    7   F     1 != U0_2
+                   50000k          5    4        -1 != U1_3
+                   50000k          4    5   F     1 != W4_3
+                   50000k          5    2        -1  = W2_2
+ ! Time = 539.49s, Average fail depth = 15, Memory usage = 290.9 MB
+ !               Branches  Non-fixed    W       Branch decision
+                   60000k          5    8        -1  = V3_2
+                   60000k          4    1   F    -1 != U5_0
+                   60000k          4    6   F    -1 != U5_3
+                   60000k          5    3         1 != V0_0
+                   60000k          8    7         0 != V1_2
+                   60000k          5    4         1 != V2_0
+                   60000k          5    2   F     0 != W1_0
+                   60000k          6    5        -1  = U5_2
+                   70000k          5    8        -1 != U4_2
+                   70000k          4    6   F     1 != U0_1
+                   70000k          7    1   F    -1 != V3_3
+                   70000k          6    7   F     0 != U0_2
+                   70000k          6    3         0  = W4_1
+                   70000k          5    4         1  = V0_3
+                   70000k          5    2   F     0 != U5_0
+                   70000k          4    5   F     1  = V0_1
+                   80000k          5    8         0  = U1_3
+                   80000k          6    7         0 != V0_1
+                   80000k          5    3   F     0 != V2_1
+                   80000k          6    6         0 != U5_0
+ ! Time = 847.75s, Average fail depth = 15, Memory usage = 379.9 MB
+ !               Branches  Non-fixed    W       Branch decision
+                   80000k          6    1        -1  = U3_2
+                   80000k          5    4        -1 != W2_1
+                   80000k          5    2   F     0 != U4_3
+                   80000k          4    5         0 != U1_0
+                   90000k          5    8         0 != U0_2
+                   90000k          8    7         0 != V1_2
+                   90000k          6    3         0  = W5_1
+                   90000k          5    1   F     1  = U5_3
+                   90000k          8    6   F    -1  = U2_2
+                   90000k          5    2   F    -1  = W3_1
+                   90000k          5    4   F     1 != W2_3
+                   90000k          4    5   F    -1 != V5_1
+                     100M          5    8        -1 != W5_1
+                     100M         11    7   F    -1 != V1_2
+                     100M          5    1   F     1 != U0_0
+                     100M          6    3        -1  = V5_1
+                     100M          5    2   F     0 != W4_1
+                     100M          4    6         1 != V1_3
+                     100M          6    4   F    -1  = U3_3
+                     100M          4    5        -1  = V4_0
+ ! Time = 1078.57s, Average fail depth = 16, Memory usage = 457.9 MB
+ !               Branches  Non-fixed    W       Branch decision
+                     110M          5    8   F    -1 != U1_2
+                     110M          6    7        -1 != W0_3
+                     110M          4    1         0  = W4_1
+                     110M          6    3         0  = U3_1
+                     110M          5    2         0  = V0_0
+                     110M          4    6   F    -1  = W3_0
+                     110M          4    5         0 != W4_3
+                     110M          5    4        -1  = V3_3
+                     120M          6    7         0 != U3_0
+                     120M          6    8   F        -
+                     120M          8    3   F    -1  = V3_3
+                     120M          5    1   F     0 != W5_0
+                     120M          5    2   F    -1  = W5_0
+                     120M          4    6        -1 != W3_0
+                     120M          5    4        -1  = W2_2
+                     120M          4    5   F    -1  = U0_0
+                     130M          6    7        -1 != V4_2
+                     130M          5    8        -1  = W0_1
+                     130M          7    3        -1 != V4_1
+                     130M          6    1         1  = V5_1
+ ! Time = 1380.06s, Average fail depth = 16, Memory usage = 583.1 MB
+ !               Branches  Non-fixed    W       Branch decision
+                     130M          5    2         0 != W2_0
+                     130M          4    6   F     1 != U1_0
+                     130M          5    4        -1 != W4_3
+                     130M          4    5   F    -1  = W3_0
+                     140M          5    8        -1  = W0_2
+                     140M          7    7   F    -1  = U1_0
+                     140M          7    3   F    -1  = W0_2
+                     140M          6    1         0 != V0_1
+                     140M          4    6   F    -1  = U2_0
+                     140M          5    2         0  = V0_0
+                     140M          4    5   F    -1 != U2_2
+                     140M          5    4        -1  = U0_3
+                     150M          6    7        -1  = U2_1
+                     150M          6    8         0  = W3_1
+                     150M          7    3        -1 != W5_2
+                     150M          5    1   F     0 != U4_2
+                     150M          4    6        -1  = V0_3
+                     150M          5    2         1  = V1_0
+                     150M          4    5         0 != V2_2
+                     150M          5    4         0  = W5_3
+ ! Time = 1599.29s, Average fail depth = 16, Memory usage = 674.2 MB
+ !               Branches  Non-fixed    W       Branch decision
+                     160M          4    8         1  = V5_3
+                     160M          8    3   F     0 != U1_1
+                     160M          6    1   F    -1  = W0_1
+                     160M          7    7   F     1  = W2_0
+                     160M          4    6        -1 != U4_0
+                     160M          4    2   F     0  = V2_2
+                     160M          5    5   F    -1 != W4_3
+                     160M          5    4   F     1  = W4_3
+                     170M          4    8        -1  = V5_1
+                     170M          8    3   F    -1 != U2_3
+                     170M          5    1         0  = U0_2
+                     170M          7    7        -1  = W3_1
+                     170M          4    6         1 != V2_1
+                     170M          4    2   F     1 != V0_3
+                     170M          4    5         1 != V5_0
+                     170M          5    4   F     0  = U2_2
+                     180M          4    8   F     1  = W5_3
+                     180M          6    1        -1 != V1_1
+                     180M          8    3        -1 != U3_1
+                     180M          6    7         1 != V2_2
+ ! Time = 1901.59s, Average fail depth = 16, Memory usage = 798.3 MB
+ !               Branches  Non-fixed    W       Branch decision
+                     180M          5    5   F     1  = V1_3
+                     180M          4    2   F    -1  = W5_3
+                     180M          4    6         0 != V1_1
+                     180M          5    4         0 != V1_3
+                     190M          4    8            -
+                     190M          6    1         1 != V0_3
+                     190M          8    3   F    -1 != W1_3
+                     190M          7    7   F     0 != V2_2
+                     190M          4    2         1  = U2_3
+                     190M          6    4         0 != U1_3
+                     190M          4    6         1 != V2_1
+                     190M          6    5         0 != W0_0
+                     200M          4    8   F    -1  = V2_2
+                     200M          9    3         1 != U3_3
+                     200M          6    1         1  = W4_2
+                     200M          7    7         1 != V5_2
+                     200M          5    4         0  = W3_3
+                     200M          4    5   F     1  = W4_3
+                     200M          4    6   F     1  = U0_2
+                     200M          4    2         0  = U0_0
+ ! Time = 2129.58s, Average fail depth = 16, Memory usage = 897.0 MB
+ !               Branches  Non-fixed    W       Branch decision
+                     210M          4    8        -1  = U0_2
+                     210M          5    1   F     1  = V5_3
+                     210M          7    3        -1 != U3_1
+                     210M          6    7        -1 != U3_0
+                     210M          4    6         0 != V4_3
+                     210M          4    2        -1 != W4_1
+                     210M          5    4         1  = W4_2
+                     210M          4    5         0 != U5_0
+                     220M          4    8        -1 != U1_2
+                     220M          6    1        -1  = W0_2
+                     220M          8    3   F    -1  = U2_1
+                     220M          6    7   F     0  = U3_3
+                     220M          4    6         1 != V2_0
+                     220M          4    2         0 != V0_3
+                     220M          5    4   F     0 != W2_2
+                     220M          4    5        -1 != W1_3
+                     230M          5    1   F    -1  = V4_2
+                     230M          4    8            -
+                     230M          9    7         1  = U2_2
+                     230M          9    3   F     0  = W4_2
+ ! Time = 2424.29s, Average fail depth = 16, Memory usage = 1.0 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     230M          4    6         0  = V5_1
+                     230M          4    4         1  = V4_0
+                     230M          5    5   F     0  = V5_3
+                     230M          4    2         1 != W1_1
+                     240M          4    8            -
+                     240M          6    1        -1  = W4_1
+                     240M          7    7   F    -1  = V0_0
+                     240M          6    3        -1 != W0_3
+                     240M          4    6         0  = W4_0
+                     240M          4    4   F     1 != U1_3
+                     240M          5    5         1 != V3_3
+                     240M          4    2   F     0  = V2_0
+                     250M          4    1         0 != U3_0
+                     250M          4    8   F    -1  = U4_2
+                     250M         14    7   F     0  = W2_1
+                     250M          7    3        -1 != U5_1
+                     250M          4    6   F     1  = W0_3
+                     250M          4    4   F     1  = W5_0
+                     250M          5    5   F    -1 != V3_0
+                     250M          4    2         0 != V3_3
+ ! Time = 2660.97s, Average fail depth = 16, Memory usage = 1.1 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     260M          6    1         1 != W5_2
+                     260M          4    8   F     1 != V5_1
+                     260M         11    7   F    -1  = V1_1
+                     260M          6    3   F    -1 != U5_0
+                     260M          4    6         0 != V1_1
+                     260M          4    4        -1 != V4_0
+                     260M          4    2   F     1  = U0_3
+                     260M          4    5        -1  = U3_1
+                     270M          6    1   F     0  = V0_2
+                     270M          4    8   F        -
+                     270M          8    7   F     0 != V4_1
+                     270M         12    3         1  = U5_0
+                     270M          4    6        -1  = U2_2
+                     270M          4    5   F     1 != V3_0
+                     270M          4    2   F    -1 != W1_1
+                     270M          4    4        -1  = W5_2
+                     280M          4    1         1 != V1_3
+                     280M          4    8   F    -1  = V5_1
+                     280M          6    7   F    -1 != V3_1
+                     280M          4    6   F    -1 != W3_0
+ ! Time = 2962.00s, Average fail depth = 16, Memory usage = 1.2 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     280M          9    3   F    -1 != W4_3
+                     280M          5    5   F     1  = U4_0
+                     280M          4    2         0 != W2_1
+                     280M          4    4   F    -1 != V0_0
+                     290M          6    1        -1  = V2_0
+                     290M          4    8            -
+                     290M         10    7   F     1 != W4_0
+                     290M          4    6   F    -1 != W5_3
+                     290M         10    3         0 != V2_1
+                     290M          5    5   F     1 != U3_1
+                     290M          4    2   F    -1 != V5_2
+                     290M          4    4   F    -1 != U2_2
+                     300M          6    1         0 != V0_0
+                     300M          9    7   F     1  = W4_0
+                     300M          4    8   F     1 != W1_1
+                     300M          6    3   F     0  = U5_0
+                     300M          5    6        -1  = V1_3
+                     300M          5    5        -1  = V1_0
+                     300M          4    4   F     1 != V4_1
+                     300M          4    2   F     1 != V5_3
+ ! Time = 3193.04s, Average fail depth = 16, Memory usage = 1.3 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     310M          6    1        -1 != W5_1
+                     310M          4    8   F     1  = V5_1
+                     310M         10    7   F     1 != W5_0
+                     310M          5    6   F     0  = U5_0
+                     310M          9    3   F     1 != V5_1
+                     310M          4    5   F     0 != U4_1
+                     310M          4    4        -1  = U0_0
+                     310M          4    2   F     0  = V4_1
+                     320M          5    1         0 != V4_3
+                     320M          4    8   F     1 != V3_1
+                     320M          7    7   F    -1 != V3_1
+                     320M          4    6         1 != V4_0
+                     320M         10    3   F    -1 != V3_1
+                     320M          5    5   F    -1 != W5_1
+                     320M          4    4        -1  = V4_1
+                     320M          4    2   F     0  = U0_2
+                     330M          5    1         0  = U3_1
+                     330M          4    8         1  = W3_0
+                     330M         14    7   F     0  = U3_1
+                     330M          4    6   F     1  = U5_3
+ ! Time = 3474.29s, Average fail depth = 15, Memory usage = 1.4 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     330M         14    3   F    -1  = V3_2
+                     330M          4    5        -1 != W2_3
+                     330M          4    4         1 != W0_0
+                     330M          4    2   F     0  = U2_2
+                     340M          5    1         1  = U4_0
+                     340M          4    8   F     1  = V0_0
+                     340M         13    7        -1  = W5_2
+                     340M          4    6         1 != U5_0
+                     340M          7    3   F    -1 != U2_2
+                     340M          4    5         1  = V0_3
+                     340M          4    4         1 != W3_3
+                     340M          4    2         0 != U1_0
+                     350M          6    1         1  = V1_1
+                     350M          9    7         1  = V3_0
+                     350M          4    8   F    -1  = W2_0
+                     350M         11    3         1 != W3_3
+                     350M          4    6   F     0  = W4_3
+                     350M          5    5         1 != V3_3
+                     350M          4    4   F     1  = W0_3
+                     350M          4    2   F     1 != W1_0
+ ! Time = 3729.13s, Average fail depth = 15, Memory usage = 1.6 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     360M          6    1         0 != U3_0
+                     360M          4    8   F     0  = W5_3
+                     360M          7    7   F     0 != V5_1
+                     360M          4    6         0 != W5_0
+                     360M         12    3   F     0 != W2_1
+                     360M          4    5   F    -1 != U5_2
+                     360M          4    4   F     0  = U5_3
+                     360M          4    2        -1 != W1_0
+                     370M          5    1         1  = V4_1
+                     370M          4    8   F     1  = V1_1
+                     370M          6    7   F     0  = V2_2
+                     370M         11    3        -1 != U4_1
+                     370M          4    6   F     1  = W0_2
+                     370M          4    5   F     1  = V0_3
+                     370M          4    4   F     1 != U3_3
+                     370M          4    2         0  = W1_3
+                     380M          6    1   F     1  = W2_2
+                     380M          4    8   F    -1  = U5_2
+                     380M         15    7   F    -1 != V2_1
+                     380M         13    3        -1 != V0_1
+ ! Time = 3998.97s, Average fail depth = 15, Memory usage = 1.7 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     380M          4    6   F    -1 != W3_0
+                     380M          4    5         0 != W3_1
+                     380M          4    4         1  = V2_0
+                     380M          4    2        -1 != W0_3
+                     390M          5    1        -1  = W0_0
+                     390M          8    7   F     1  = W0_2
+                     390M          4    8   F    -1  = V3_3
+                     390M          8    3   F    -1 != V0_0
+                     390M          4    6         0  = W4_1
+                     390M          5    5         0  = U1_2
+                     390M          4    4         1 != W4_0
+                     390M          4    2   F     0 != W3_3
+                     400M          4    1   F     0  = V1_2
+                     400M          7    7   F    -1  = W4_0
+                     400M          4    8   F     1  = W0_3
+                     400M         12    3         0 != V4_0
+                     400M          5    6         0 != W3_0
+                     400M          4    5         0 != W5_3
+                     400M          4    4   F     0 != W3_2
+                     410M          6    1        -1  = U0_1
+ ! Time = 4267.79s, Average fail depth = 15, Memory usage = 1.8 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     400M          4    2   F     1  = V5_0
+                     410M         11    3   F     1  = W1_2
+                     410M          4    8         1  = U3_0
+                     410M          6    7         1  = V5_1
+                     410M          4    6         1  = U4_0
+                     410M          4    5   F     0  = W4_1
+                     410M          4    4         0  = W4_3
+                     410M          4    2   F     1  = U0_2
+                     420M          7    1         1  = V2_0
+                     420M          4    8         1 != U0_3
+                     420M          6    7         1  = W0_0
+                     420M          6    3         0 != V0_2
+                     420M          5    6         1  = V2_3
+                     420M          4    5        -1 != U2_0
+                     420M          4    4        -1  = W2_2
+                     420M          4    2   F     0  = V4_1
+                     430M          5    1         1  = U4_0
+                     430M          4    8        -1  = V5_2
+                     430M          7    7        -1 != W3_0
+                     430M          7    3   F     0 != U3_2
+ ! Time = 4539.84s, Average fail depth = 15, Memory usage = 1.9 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     430M          4    6   F     0 != V0_3
+                     430M          4    5         0 != W5_3
+                     430M          4    4   F    -1  = W4_3
+                     440M          6    1         1  = U0_2
+                     430M          4    2         1  = V4_2
+                     440M          4    8         0 != V5_3
+                     440M         13    7   F     0  = V3_1
+                     440M         15    3   F    -1 != V2_1
+                     440M          5    6        -1  = V5_1
+                     440M          4    5   F    -1  = U1_2
+                     440M          4    4        -1  = U5_0
+                     450M          6    1         1 != W4_0
+                     440M          4    2         1  = W2_0
+                     450M          4    8   F        -
+                     450M          9    7   F     1 != U0_1
+                     450M         10    3         0 != W2_2
+                     450M          4    6         1 != W0_3
+                     450M          4    5         1 != V1_2
+                     450M          4    4         0  = V5_3
+                     450M          4    2        -1 != W3_0
+ ! Time = 4787.47s, Average fail depth = 15, Memory usage = 2.0 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     460M          6    1   F     1 != V0_1
+                     460M          4    8         1 != W0_3
+                     460M          9    7   F    -1 != V0_0
+                     460M          9    3   F    -1  = V1_0
+                     460M          5    6         0  = U5_0
+                     460M          4    5         0  = V1_2
+                     460M          4    4        -1 != W3_3
+                     460M          4    2   F    -1 != U5_1
+                     470M          5    1   F    -1 != U1_2
+                     470M          4    8        -1 != U2_1
+                     470M         12    7   F     1 != V0_3
+                     470M         14    3   F    -1  = W0_0
+                     470M          4    6         0 != W1_2
+                     470M          4    5   F     0 != W5_0
+                     470M          4    4   F    -1 != V5_0
+                     480M          5    1   F    -1 != V1_1
+                     470M          4    2         1  = W5_3
+                     480M          4    8        -1 != U3_3
+                     480M          7    7   F     0  = V5_3
+                     480M         12    3         1 != W4_2
+ ! Time = 5038.91s, Average fail depth = 15, Memory usage = 2.1 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     480M          5    6   F     0 != W4_0
+                     480M          4    5        -1 != U1_2
+                     480M          4    4         1 != V5_0
+                     490M          5    1        -1  = W2_0
+                     480M          4    2        -1  = W1_1
+                     490M          4    8   F    -1 != W2_0
+                     490M          7    7   F     1  = V1_0
+                     490M          9    3         0  = W3_0
+                     490M          4    6         0 != V4_1
+                     490M          4    5        -1 != V5_1
+                     490M          4    4         0  = V3_0
+                     500M          6    1   F    -1 != V3_1
+                     490M          4    2         0  = V3_0
+                     500M          4    8   F     1  = V2_3
+                     500M          7    7   F    -1  = V3_1
+                     500M          7    3   F     1  = W0_0
+                     500M          4    6   F     0  = W0_1
+                     500M          4    5   F     1  = U5_3
+                     500M          4    4   F     0  = V5_0
+                     510M          6    1        -1 != V3_1
+ ! Time = 5311.93s, Average fail depth = 15, Memory usage = 2.2 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     500M          4    2        -1 != U0_3
+                     510M          4    8   F    -1 != W0_3
+                     510M         15    7   F    -1  = V2_1
+                     510M          4    6         0 != U4_3
+                     510M          9    3   F    -1 != V1_1
+                     510M          4    4         0  = W0_2
+                     510M          4    5         1  = U2_3
+                     520M          6    1        -1  = V1_1
+                     510M          4    2   F    -1 != U0_2
+                     520M          4    8        -1 != V4_1
+                     520M          6    7   F    -1  = U3_1
+                     520M         15    3         0 != V0_1
+                     520M          4    6   F     0  = W3_0
+                     520M          4    5         1 != U5_3
+                     520M          4    4        -1 != V5_0
+                     530M          5    1   F     0  = U5_2
+                     520M          4    2         0 != V2_2
+                     530M          4    8   F    -1 != V1_2
+                     530M          7    7   F    -1 != U3_1
+                     530M          5    6         0  = V5_0
+ ! Time = 5573.54s, Average fail depth = 15, Memory usage = 2.3 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     530M         12    3        -1  = U0_3
+                     530M         11    5   F     0 != U5_2
+                     530M          4    4   F    -1 != U0_0
+                     540M          6    1   F    -1 != V3_1
+                     540M         11    7         1  = U3_1
+                     530M          4    2         1  = U5_2
+                     540M          4    8        -1 != W4_3
+                     540M         13    3   F    -1  = V5_0
+                     540M          4    6   F    -1 != V0_0
+                     540M          4    5   F    -1 != W3_2
+                     540M          4    4        -1  = U0_2
+                     550M          5    1   F    -1  = W2_1
+                     550M         13    7   F    -1  = U4_2
+                     540M          4    2         1  = W2_1
+                     550M          4    8   F        -
+                     550M         12    3         1 != W2_1
+                     550M          4    6        -1 != U2_1
+                     550M          4    5   F     0  = U3_3
+                     550M          4    4        -1  = W4_3
+                     560M          6    1   F     1  = U5_0
+ ! Time = 5848.33s, Average fail depth = 15, Memory usage = 2.4 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     550M          4    2   F    -1  = U1_2
+                     560M          4    8   F     1 != U1_3
+                     560M          8    7   F     0  = U5_1
+                     560M          4    6         0 != V3_2
+                     560M         10    3        -1  = U2_2
+                     560M          4    5   F    -1 != W5_1
+                     560M          4    4         1  = V2_1
+                     570M          6    1         1 != W1_1
+                     560M          4    2   F    -1 != U2_1
+                     570M          4    8   F    -1 != W2_3
+                     570M          6    7         0  = V4_2
+                     570M          5    6         1  = U1_0
+                     570M          4    5         1  = W4_0
+                     570M          7    3   F     0  = V2_3
+                     570M          4    4   F     1  = W2_0
+                     570M          4    2         1  = V1_1
+                     580M          6    1         1  = V5_3
+                     580M          4    8   F    -1  = W2_2
+                     580M         15    7         0 != V3_1
+                     580M          4    6        -1  = V5_0
+ ! Time = 6101.61s, Average fail depth = 15, Memory usage = 2.5 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     580M          4    5   F    -1  = V5_1
+                     580M          4    4         1  = W1_3
+                     580M          5    3   F     0  = V5_0
+                     590M          6    1         0  = V1_2
+                     580M          4    2   F     1  = V5_0
+                     590M          4    8         0  = W1_3
+                     590M         15    7         0  = V1_1
+                     590M          5    6         0 != V1_2
+                     590M          4    5         1  = W3_2
+                     590M          4    4   F     0  = V0_2
+                     590M          6    3   F     0 != V4_2
+                     590M          4    2   F    -1 != W0_0
+                     600M          5    1   F     0  = V0_1
+                     600M          4    8   F     0 != V4_1
+                     600M          7    7   F     0 != V0_0
+                     600M          4    5         1 != U4_0
+                     600M          5    6   F     1 != U1_3
+                     600M          4    4         0 != U1_0
+                     600M         15    3   F     0  = V3_1
+                     600M          4    2   F     1 != U4_0
+ ! Time = 6363.49s, Average fail depth = 15, Memory usage = 2.6 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     610M         12    1         0 != U5_0
+                     610M          4    8   F    -1  = U4_3
+                     610M          8    7        -1  = W3_2
+                     610M          4    5   F    -1  = U3_0
+                     610M          4    6   F     1  = V4_3
+                     610M          4    4         1  = V4_3
+                     610M         12    3        -1 != U5_0
+                     620M          5    1         1  = U0_3
+                     610M          4    2        -1  = V2_2
+                     620M          4    8            -
+                     620M          7    7   F     0  = V2_2
+                     620M          4    5        -1 != U3_0
+                     620M          5    6   F     0  = V1_0
+                     620M          4    4   F     1 != W2_3
+                     620M          9    3        -1 != U0_0
+                     620M          4    2   F     0 != W5_0
+                     630M          6    1   F     1  = U2_1
+                     630M          4    8   F     0 != U4_3
+                     630M          7    7        -1  = V3_1
+                     630M          4    5   F     1 != V2_1
+ ! Time = 6619.29s, Average fail depth = 15, Memory usage = 2.7 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     630M          5    6         1  = W3_3
+                     630M          4    4   F     1 != V4_0
+                     630M         10    3         0  = W2_3
+                     630M          4    2   F     1 != V1_0
+                     640M          6    1   F     0 != W3_0
+                     640M          4    8         1 != W0_2
+                     640M          8    7        -1  = V0_3
+                     640M          4    5        -1  = U0_0
+                     640M          4    6        -1  = U1_0
+                     640M          4    4        -1 != V1_1
+                     640M          9    3   F    -1  = U5_2
+                     650M          6    1   F     0  = W3_0
+                     640M          4    2        -1 != W2_3
+                     650M          4    8         1  = V5_1
+                     650M          4    5         0  = V2_3
+                     650M          8    7         0  = W2_3
+                     650M          4    6   F    -1 != U3_0
+                     650M          4    4   F    -1 != U1_0
+                     650M         12    3   F     1 != V0_2
+                     660M          6    1   F     0 != V5_3
+ ! Time = 6892.58s, Average fail depth = 15, Memory usage = 2.9 GB
+ !               Branches  Non-fixed    W       Branch decision
+                     650M          4    2         1 != U2_3
+                     660M          4    8   F    -1  = U2_0
+                     660M          4    5   F     1  = U0_3
+                     660M          8    7        -1  = W1_2
+                     660M          5    6   F     0 != U2_0
+                     660M         13    3   F    -1  = V5_0
+                     660M          4    4         0 != V5_0
+                     670M          6    1        -1 != W3_3
+                     660M          4    2        -1  = U0_3
+                     670M          4    8         1  = W2_3
+                     670M          4    5         0 != U3_0
+                     670M         11    7         0  = V0_2
+                     670M          4    6         1 != U5_2
+                     670M          4    4         0 != U0_3
+                     680M          5    1   F     0 != W5_1
+                     670M         10    3         0  = V4_0
+                     670M          4    2   F     1  = U5_0
+                     680M          4    8   F     1 != V2_3
+                     680M         15    7   F     0  = V2_3
+                     680M          4    5         0 != W1_0
+ ! Time = 7129.93s, Average fail depth = 15, Memory usage = 2.9 GB
+ !               Branches  Non-fixed    W       Branch decision
+submitit WARNING (2023-04-30 21:20:42,316) - Bypassing signal SIGCONT
+submitit INFO (2023-04-30 21:20:42,316) - Job has timed out. Ran 119 minutes out of requested 121 minutes.
+submitit WARNING (2023-04-30 21:20:42,317) - Caught signal SIGUSR2 on cpunode3: this job is timed-out.
+submitit INFO (2023-04-30 21:20:42,317) - Not checkpointing nor requeuing since I am a slave (procid=1).
+                     680M          5    6         1 != U4_1
+                     680M          4    4         1 != V1_0
+                     690M          5    1        -1  = V2_2
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 5475353803
+ ! Number of fails        : 2676679385
+ ! Total memory usage     : 3.1 GB (3.1 GB CP Optimizer + 0.0 GB Concert)
+ ! Time spent in solve    : 7200.09s (7200.09s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 760457.4
+ ! ----------------------------------------------------------------------------
+Unknown
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/2x2x2_6_Apr30_19:21:35/27533_1_stats.csv
+submitit INFO (2023-04-30 21:21:40,140) - Job completed successfully
