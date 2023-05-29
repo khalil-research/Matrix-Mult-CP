@@ -1,7 +1,5 @@
 # Matrix Multiplication using Constraint Programming
 
-Overleaf link for symmetry pruning: https://www.overleaf.com/5527138239pnfvrpxzcmfj
-
 To-Do:
 - Read and Implement symmetry handling
 - Matrix multiplication constraints for specific matrices (diagonal, upper triangular, skew, etc...)
