@@ -11,4 +11,4 @@
     - e.g.: `python src/main.py 2 2 2 7 cpo --seed 5`
 
 
-Look in experiments/readme.md to understand how to run experiemnts from paper
+Look in experiments/readme.md to understand how to run experiments from paper
