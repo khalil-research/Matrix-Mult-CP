@@ -9,4 +9,4 @@
 1. Activate the VENV: `source scripts/activate_env.sh`.
 2. Run `python src/main.py N M P R {cpo,sat}`. You can specify the solver `cpo` vs `sat` and pass solver specific args.
     - e.g.: `python src/main.py 2 2 2 7 cpo --seed 5`
-
+Look in experiments/readme.md to understand how to run experiemnts from paper
