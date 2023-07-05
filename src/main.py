@@ -1,4 +1,5 @@
 from model.cp_opt import CPOpt, add_cpo_args
+from model.cp_penalty_opt import CPPenaltyOpt
 from model.cp_sat import add_cpsat_args
 
 
@@ -50,6 +51,13 @@ if __name__ == "__main__":
 
     if (args.solver == 'cpo'):
         cp_model = CPOpt(args.N, args.M, args.P, args.R)
+        cp_model.solver_params(solver_args)
+        sol = cp_model.solve(validate=True)
+
+        print(sol)
+    
+    elif (args.solver == 'cpo-penalty-opt'):
+        cp_model = CPPenaltyOpt(args.N, args.M, args.P, args.R)
         cp_model.solver_params(solver_args)
         sol = cp_model.solve(validate=True)
 

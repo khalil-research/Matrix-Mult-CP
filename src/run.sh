@@ -11,5 +11,5 @@
 # source cplex_20_Matrix_Mult/bin/activate
 
 
-python main.py 2 2 2 7 cpo
+python main.py 2 2 2 7 cpo-penalty-opt
 # deactivate
