@@ -1,0 +1,35 @@
+-------------------------------------------------------------------------------
+Model constraints: 75, variables: integer: 28, interval: 0, sequence: 0
+Solve status: Feasible
+Search status: SearchCompleted, stop cause: SearchHasNotBeenStopped
+Solve time: 0.04 sec
+-------------------------------------------------------------------------------
+Variables:
+   A0_0 = 1
+   A0_1 = -1
+   A0_2 = 0
+   A0_3 = 1
+   A1_0 = 1
+   A1_1 = -1
+   A1_2 = 0
+   A1_3 = 0
+   A2_0 = 0
+   A2_1 = 1
+   A2_2 = 0
+   A2_3 = -1
+   A3_0 = 0
+   A3_1 = 0
+   A3_2 = 1
+   A3_3 = 0
+   B0_0 = 0
+   B1_0 = -1
+   B2_0 = 0
+   B3_0 = 0
+   C0_0 = 0
+   C1_0 = 0
+   C2_0 = 1
+   C3_0 = 0
+   D0_0 = 1
+   D1_0 = 1
+   D2_0 = -1
+   D3_0 = -1

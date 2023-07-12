@@ -1,0 +1,2 @@
+,N,M,P,R,validineq,symmetry,status,stime,ttime,mem,numfail,numbranch
+0,2,2,2,6,False,True,Infeasible,333.88,333.88,181244592,144912785,293770854

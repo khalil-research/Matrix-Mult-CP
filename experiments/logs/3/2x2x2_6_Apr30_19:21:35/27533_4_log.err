@@ -1,0 +1,2 @@
+submitit WARNING (2023-04-30 21:20:42,316) - Bypassing signal SIGCONT
+submitit WARNING (2023-04-30 21:20:42,317) - Caught signal SIGUSR2 on cpunode3: this job is timed-out.

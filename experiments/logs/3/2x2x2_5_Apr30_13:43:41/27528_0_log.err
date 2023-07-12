@@ -1,0 +1,42 @@
+submitit WARNING (2023-04-30 15:42:42,351) - Bypassing signal SIGCONT
+submitit WARNING (2023-04-30 15:42:42,365) - Caught signal SIGUSR2 on cpunode24: this job is timed-out.
+submitit ERROR (2023-04-30 15:42:42,382) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/h/30/pashootan/Matrix-Mult-CP/src/slurm/cpo_exec.py", line 27, in __call__
+    sol = self.cp_model.solve()
+  File "/h/30/pashootan/Matrix-Mult-CP/src/model/cp_opt.py", line 99, in solve
+    return self.mdl.solve()
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/model.py", line 1289, in solve
+    msol = solver.solve()
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/solver/solver.py", line 708, in solve
+    raise e
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/solver/solver.py", line 701, in solve
+    msol = self.agent.solve()
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/solver/solver_local.py", line 213, in solve
+    jsol = self._wait_json_result(EVT_SOLVE_RESULT)
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/solver/solver_local.py", line 572, in _wait_json_result
+    data = self._wait_event(evt)
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/solver/solver_local.py", line 467, in _wait_event
+    evt, data = self._read_message()
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/solver/solver_local.py", line 631, in _read_message
+    frame = self._read_frame(6)
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/docplex/cp/solver/solver_local.py", line 676, in _read_frame
+    data = self.pin.read(nbb)
+  File "/h/30/pashootan/.virtualenvs/matmul/lib/python3.10/site-packages/submitit/core/job_environment.py", line 226, in checkpoint_and_try_requeue
+    raise utils.UncompletedJobError(message)
+submitit.core.utils.UncompletedJobError: Job not requeued because: timed-out and not checkpointable.
+srun: error: cpunode24: task 0: Exited with exit code 1

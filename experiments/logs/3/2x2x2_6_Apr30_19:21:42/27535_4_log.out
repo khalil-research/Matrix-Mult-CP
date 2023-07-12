@@ -1,0 +1,52 @@
+submitit INFO (2023-04-30 19:21:44,066) - Starting with JobEnvironment(job_id=27535, hostname=cpunode24, local_rank=4(5), node=0(1), global_rank=4(5))
+submitit INFO (2023-04-30 19:21:44,066) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/2x2x2_6_Apr30_19:21:42/27535_submitted.pkl
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 72 variables, 237 constraints
+ ! TimeLimit            = 7200
+ ! Workers              = 8
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 2654
+ ! Initial process time : 0.02s (0.02s extraction + 0.00s propagation)
+ !  . Log search space  : 107.1 (before), 107.1 (after)
+ !  . Memory usage      : 575.6 kB (before), 575.6 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+                   10000k          6    1         0  = W1_1
+                   10000k          6    6   F     1  = W5_1
+                   10000k          6    5         1 != U3_1
+                   10000k          6    4   F     0  = U3_1
+                   10000k          7    3   F     0  = W4_1
+                   10000k          6    2   F     1 != U1_2
+                   10000k          7    7        -1 != V0_1
+                   10000k          7    8        -1 != V1_2
+                   20000k          6    6   F     0 != V3_3
+                   20000k          6    1         1 != U2_2
+                   20000k          7    5   F     0  = V3_0
+                   20000k          6    4   F     0  = U0_1
+                   20000k          6    2   F     0  = W3_3
+                   20000k          8    7   F     1  = V5_0
+                   20000k          7    8   F     0 != W3_1
+                   20000k          8    3   F     0  = W4_3
+                   30000k          6    6   F     0 != W3_2
+                   30000k          6    2   F     0  = V2_0
+                   30000k          6    5         0 != V0_3
+                   30000k          6    4         1 != W4_2
+ ! Time = 395.33s, Average fail depth = 18, Memory usage = 147.9 MB
+ !               Branches  Non-fixed    W       Branch decision
+                   30000k          8    1   F     1 != U1_1
+                   30000k          8    7         1  = V2_0
+                   30000k          9    3         0 != W3_3
+                   30000k          7    8   F        -
+ ! ----------------------------------------------------------------------------
+ ! Search completed, model has no solution.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 305585157
+ ! Number of fails        : 150778805
+ ! Total memory usage     : 195.6 MB (195.5 MB CP Optimizer + 0.0 MB Concert)
+ ! Time spent in solve    : 509.81s (509.79s engine + 0.02s extraction)
+ ! Search speed (br. / s) : 599433.4
+ ! ----------------------------------------------------------------------------
+Infeasible
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/2x2x2_6_Apr30_19:21:42/27535_4_stats.csv
+submitit INFO (2023-04-30 19:30:14,468) - Job completed successfully

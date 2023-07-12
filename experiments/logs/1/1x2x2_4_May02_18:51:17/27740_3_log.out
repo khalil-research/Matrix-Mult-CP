@@ -1,0 +1,29 @@
+submitit INFO (2023-05-02 18:51:19,256) - Starting with JobEnvironment(job_id=27740, hostname=cpunode2, local_rank=3(5), node=0(1), global_rank=3(5))
+submitit INFO (2023-05-02 18:51:19,257) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/4/1x2x2_4_May02_18:51:17/27740_submitted.pkl
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 32 variables, 16 constraints
+ ! TimeLimit            = 7200
+ ! Workers              = 8
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 2108
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 50.7 (before), 50.7 (after)
+ !  . Memory usage      : 332.7 kB (before), 332.7 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+ *                    185  0.02s        1         0 != U1_1
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 7685
+ ! Number of fails        : 3605
+ ! Total memory usage     : 4.9 MB (4.9 MB CP Optimizer + 0.0 MB Concert)
+ ! Time spent in solve    : 0.02s (0.02s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 768499.9
+ ! ----------------------------------------------------------------------------
+Feasible
+Model is valid
+Saving solution to: /h/30/pashootan/Matrix-Mult-CP/logs/4/1x2x2_4_May02_18:51:17/27740_3_solution.txt
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/4/1x2x2_4_May02_18:51:17/27740_3_stats.csv
+submitit INFO (2023-05-02 18:51:19,650) - Job completed successfully

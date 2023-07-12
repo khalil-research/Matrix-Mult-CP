@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Model constraints: 9, variables: integer: 21, interval: 0, sequence: 0
+Solve status: Feasible
+Search status: SearchCompleted, stop cause: SearchHasNotBeenStopped
+Solve time: 0.01 sec
+-------------------------------------------------------------------------------
+Variables:
+   U0_0 = 1
+   U0_1 = -1
+   U0_2 = 0
+   U1_0 = 0
+   U1_1 = 1
+   U1_2 = 1
+   U2_0 = 0
+   U2_1 = 0
+   U2_2 = 1
+   V0_0 = -1
+   V0_1 = 0
+   V0_2 = 0
+   V1_0 = -1
+   V1_1 = -1
+   V1_2 = 0
+   V2_0 = -1
+   V2_1 = -1
+   V2_2 = 1
+   W0_0 = -1
+   W1_0 = -1
+   W2_0 = 1
