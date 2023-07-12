@@ -5,7 +5,6 @@ from docplex.cp.model import CpoModel
 import numpy as np
 import math
 
-
 def add_cpo_args(parser):
     parser.add_argument('--log_period', type=int, default=100000, dest="cpo_LogPeriod")
     parser.add_argument('--seed', type=int, default=4, dest="cpo_RandomSeed")
@@ -97,7 +96,7 @@ class CPPenaltyOpt(CPModelBase):
                 pass
 
         ## Set the objective to penalize zero violations
-        mdl.add(mdl.minimize(penalty))
+        self.mdl.add(self.mdl.minimize(penalty))
 
     def solver_params(self, args_dict):
         self.mdl.set_parameters(args_dict)

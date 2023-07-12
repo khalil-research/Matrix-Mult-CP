@@ -8,13 +8,19 @@ from cp_formulation import CP_general
 
 import argparse
 
+from datetime import datetime
+
+# import sys
+# log_file_name = '/home/liucha90/workplace/Matrix-Mult-CP/cp_penalty_opt' + str(datetime.now()) + '.txt'
+# f = open(log_file_name, 'w')
+# sys.stdout = f
 
 def parse_args():
     parser = argparse.ArgumentParser()
 
      # '''# arguments pertaining to CPLEX CP parameters
     # parser.add_argument('time_limit', type=int)
-    # parser.add_argument('seed', type=int)
+    parser.add_argument('seed', type=int)
 
     # parser.add_argument('valid_ineq', type=bool)
     # parser.add_argument('symmetry',   type=bool)
@@ -38,6 +44,9 @@ def parse_args():
 
     parser_sat = subparsers.add_parser('sat', help='OR-Tools CP_SAT Solver')
     add_cpsat_args(parser_sat)
+
+    parser_cpo_penalty_opt = subparsers.add_parser('cpo-penalty-opt', help='IBM CP Optimizer')
+    add_cpsat_args(parser_cpo_penalty_opt)
 
     args = parser.parse_args()
     args_dict = vars(args)
@@ -63,5 +72,16 @@ if __name__ == "__main__":
 
         print(sol)
 
+        # write stats to log_file
+        log_file = open("/home/liucha90/workplace/Matrix-Mult-CP/log/cp_penalty_opt_log.txt","a")
+        now = datetime.now()
+        running_time = sol.get_solve_time()
+        num_branches = '-'
+        line = f"\n{now} \t {args.time_limit} \t {args.seed} \t {args.N} \t {args.M} \t {args.P} \t {args.R} \t {args.solver} \t {running_time} \t {num_branches}"
+        log_file.write(line)
+        log_file.close()
+
     else:
         print('OR-Tools CP_SAT Solver not available yet.')
+
+# f.close()
