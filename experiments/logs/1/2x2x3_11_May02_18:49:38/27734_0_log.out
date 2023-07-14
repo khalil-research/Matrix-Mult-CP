@@ -1,0 +1,37 @@
+submitit INFO (2023-05-02 18:49:40,313) - Starting with JobEnvironment(job_id=27734, hostname=cpunode3, local_rank=0(5), node=0(1), global_rank=0(5))
+submitit INFO (2023-05-02 18:49:40,313) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/4/2x2x3_11_May02_18:49:38/27734_submitted.pkl
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 176 variables, 144 constraints
+ ! TimeLimit            = 7200
+ ! Workers              = 8
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 3978
+ ! Initial process time : 0.02s (0.02s extraction + 0.00s propagation)
+ !  . Log search space  : 279.0 (before), 279.0 (after)
+ !  . Memory usage      : 821.3 kB (before), 821.3 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+                   10000k          5    1        -1 != U2_0
+                   10000k          4    2         1  = V3_1
+                   10000k          7    6         1 != V3_4
+                   10000k          3    5        -1  = W7_4
+                   10000k          4    4   F     0  = U4_2
+                   10000k         17    7        -1 != U9_0
+                   10000k         19    3        -1  = U3_1
+                   10000k          5    8        -1  = V0_2
+ *                 14247k  161.54s      5         0  = W6_4
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 112754334
+ ! Number of fails        : 52376600
+ ! Total memory usage     : 97.9 MB (97.8 MB CP Optimizer + 0.1 MB Concert)
+ ! Time spent in solve    : 161.56s (161.54s engine + 0.02s extraction)
+ ! Search speed (br. / s) : 697996.4
+ ! ----------------------------------------------------------------------------
+Feasible
+Model is valid
+Saving solution to: /h/30/pashootan/Matrix-Mult-CP/logs/4/2x2x3_11_May02_18:49:38/27734_0_solution.txt
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/4/2x2x3_11_May02_18:49:38/27734_0_stats.csv
+submitit INFO (2023-05-02 18:52:22,503) - Job completed successfully

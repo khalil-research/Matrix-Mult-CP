@@ -1,0 +1,53 @@
+submitit INFO (2023-05-03 20:53:25,526) - Starting with JobEnvironment(job_id=27786, hostname=cpunode2, local_rank=0(5), node=0(1), global_rank=0(5))
+submitit INFO (2023-05-03 20:53:25,527) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/5/3x3x3_23_May03_20:53:22/27786_submitted.pkl
+Running with: Namespace(N=3, M=3, P=3, R=23, valid_ineq=False, symmetry=False, min_add=False, cyclic_invar=True, inex_bounds=[9, 10], output_dir='../logs/5/3x3x3_23_May03_20:53:22', n_seeds=5, n_workers=20, timeout=2880, solver='cpo', cpo_LogPeriod=10000000, cpo_RandomSeed=4, inexact_ineq=True)
+Running solver with: {'LogPeriod': 10000000, 'RandomSeed': 4, 'Workers': 20, 'TimeLimit': 172800}
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 207 variables, 761 constraints
+ ! TimeLimit            = 172800
+ ! Workers              = 20
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 2351
+ ! Initial process time : 0.09s (0.09s extraction + 0.00s propagation)
+ !  . Log search space  : 328.1 (before), 328.1 (after)
+ !  . Memory usage      : 5.5 MB (before), 5.5 MB (after)
+ ! Using parallel search with 20 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+                   10000k          4   13   F    -1 != C7_5
+                   10000k          6    2         1 != D3_0
+                   10000k          4    9         1 != A3_1
+                   10000k          6    1   F     0 != D3_3
+                   10000k          5    6         0  = C5_3
+                   10000k          5    4         0 != B4_2
+                   10000k          5    5        -1 != D3_4
+                   10000k          4   17   F    -1  = A1_0
+                   10000k         39   11   F     0 != B1_5
+                   10000k         32   19         0 != C8_5
+                   10000k         18    3   F    -1  = B6_4
+                   10000k         22    7         1 != B3_0
+                   10000k         30   15   F     1 != A7_4
+                   10000k         41    8   F    -1  = D2_4
+                   10000k         24   12   F    -1  = C5_1
+                   10000k         31   18         0 != C0_1
+                   10000k         19   10         1 != C5_1
+                   10000k         10   16   F    -1 != D5_0
+                   10000k          5   20         0 != B4_1
+                   10000k          9   14   F    -1  = D8_4
+ ! Time = 2046.97s, Average fail depth = 21, Memory usage = 161.5 MB
+ !               Branches  Non-fixed    W       Branch decision
+ *                 19162k  3388.02s    17         0 != C6_3
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 363434934
+ ! Number of fails        : 170291843
+ ! Total memory usage     : 396.3 MB (396.2 MB CP Optimizer + 0.1 MB Concert)
+ ! Time spent in solve    : 3388.16s (3388.08s engine + 0.09s extraction)
+ ! Search speed (br. / s) : 107269.0
+ ! ----------------------------------------------------------------------------
+Feasible
+Model is valid
+Saving solution to: /h/30/pashootan/Matrix-Mult-CP/logs/5/3x3x3_23_May03_20:53:22/27786_0_solution.txt
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/5/3x3x3_23_May03_20:53:22/27786_0_stats.csv
+submitit INFO (2023-05-03 21:49:54,629) - Job completed successfully

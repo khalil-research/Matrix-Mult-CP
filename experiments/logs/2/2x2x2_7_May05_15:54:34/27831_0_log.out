@@ -1,0 +1,31 @@
+submitit INFO (2023-05-05 15:55:02,546) - Starting with JobEnvironment(job_id=27831, hostname=cpunode3, local_rank=0(5), node=0(1), global_rank=0(5))
+submitit INFO (2023-05-05 15:55:02,547) - Loading pickle: /h/30/pashootan/Matrix-Mult-CP/src/../logs/6/2x2x2_7_May05_15:54:34/27831_submitted.pkl
+Running with: Namespace(N=2, M=2, P=2, R=7, valid_ineq=False, symmetry=False, min_add=False, cyclic_invar=False, inex_bounds=(0, 0), output_dir='../logs/6/2x2x2_7_May05_15:54:34', n_seeds=5, n_workers=20, timeout=120, solver='cpo', cpo_LogPeriod=10000000, cpo_RandomSeed=4, inexact_ineq=False)
+Running solver with: {'LogPeriod': 10000000, 'RandomSeed': 4, 'Workers': 20, 'TimeLimit': 7200}
+ ! --------------------------------------------------- CP Optimizer 22.1.1.0 --
+ ! Satisfiability problem - 84 variables, 64 constraints
+ ! TimeLimit            = 7200
+ ! Workers              = 20
+ ! LogPeriod            = 10000000
+ ! RandomSeed           = 9640
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 133.1 (before), 133.1 (after)
+ !  . Memory usage      : 495.8 kB (before), 495.8 kB (after)
+ ! Using parallel search with 20 workers.
+ ! ----------------------------------------------------------------------------
+ !               Branches  Non-fixed    W       Branch decision
+ *                   125k  2.71s        1        -1  = W1_2
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 2523488
+ ! Number of fails        : 1180705
+ ! Total memory usage     : 21.8 MB (21.8 MB CP Optimizer + 0.0 MB Concert)
+ ! Time spent in solve    : 2.73s (2.73s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 927752.9
+ ! ----------------------------------------------------------------------------
+Feasible
+Model is valid
+Saving solution to: /h/30/pashootan/Matrix-Mult-CP/logs/6/2x2x2_7_May05_15:54:34/27831_0_solution.txt
+Saving stats to: /h/30/pashootan/Matrix-Mult-CP/logs/6/2x2x2_7_May05_15:54:34/27831_0_stats.csv
+submitit INFO (2023-05-05 15:55:05,803) - Job completed successfully
