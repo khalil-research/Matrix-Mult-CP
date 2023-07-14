@@ -7,8 +7,8 @@
 
 ## Running the Code
 1. Activate the VENV: `source scripts/activate_env.sh`.
-2. Run `python src/main.py N M P R {cpo,sat}`. You can specify the solver `cpo` vs `sat` and pass solver specific args.
+2. In `src/main.py` look for `slurm_account` and set it according to your SLURM credentials.
+3. Run `python src/main.py N M P R {cpo,sat}`. You can specify the solver `cpo` vs `sat` and pass solver specific args.
     - e.g.: `python src/main.py 2 2 2 7 cpo --seed 5`
 
-
-Look in experiments/readme.md to understand how to run experiments from paper
+Look under `experiments/readme.md` for a complete list of commands to reproduce the results from paper.
