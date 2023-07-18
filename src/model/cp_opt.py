@@ -215,6 +215,7 @@ class CPOpt(CPModelBase):
         self.solver_params(params)
 
     def solver_params(self, args_dict):
+        print(args_dict)
         self.mdl.set_parameters(args_dict)
 
 
