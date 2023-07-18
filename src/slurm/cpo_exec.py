@@ -1,5 +1,6 @@
 from slurm.base import SLURM_Executor
 from model.cp_opt import CPOpt
+from model.cp_penalty_opt import CPPenaltyOpt
 
 import os
 import random
@@ -12,10 +13,21 @@ class CPO_Executor(SLURM_Executor):
     def __init__(self, args, solver_args):
         super().__init__(args, solver_args)
 
-        self.cp_model = CPOpt(args.N, args.M, args.P, args.R,
-                            cyclic_invar = args.cyclic_invar, min_add = args.min_add,
-                            inex_bounds=args.inex_bounds, valid_ineq=args.valid_ineq,
-                            symmetry=args.symmetry, inexact_ineq=args.inexact_ineq)
+        if (args.solver == 'cpo'):
+            # cp_model = CPOpt(args.N, args.M, args.P, args.R)
+            # cp_model.solver_params(solver_args)
+            # sol = cp_model.solve(validate=True)
+
+            # print(sol)
+            self.cp_model = CPOpt(args.N, args.M, args.P, args.R,
+                                cyclic_invar = args.cyclic_invar, min_add = args.min_add,
+                                inex_bounds=args.inex_bounds, valid_ineq=args.valid_ineq,
+                                symmetry=args.symmetry, inexact_ineq=args.inexact_ineq)
+        elif (args.solver == 'cpo-penalty-opt'):
+            self.cp_model = CPPenaltyOpt(args.N, args.M, args.P, args.R,
+                                cyclic_invar = args.cyclic_invar, min_add = args.min_add,
+                                inex_bounds=args.inex_bounds, valid_ineq=args.valid_ineq,
+                                symmetry=args.symmetry, inexact_ineq=args.inexact_ineq)
 
         solver_args["Workers"] = args.n_workers
         solver_args["TimeLimit"] = args.timeout * 60
@@ -24,6 +36,22 @@ class CPO_Executor(SLURM_Executor):
             solver_args["SolutionLimit"] = 1
 
         self.cp_model.solver_params(solver_args)
+
+        
+            # cp_model = CPPenaltyOpt(args.N, args.M, args.P, args.R)
+            # cp_model.solver_params(solver_args)
+            # sol = cp_model.solve(validate=True)
+
+            # print(sol)
+
+            # # write stats to log_file
+            # log_file = open("/home/liucha90/workplace/Matrix-Mult-CP/log/cp_penalty_opt_log.txt","a")
+            # now = datetime.now()
+            # running_time = sol.get_solve_time()
+            # num_branches = '-'
+            # line = f"\n{now} \t {args.time_limit} \t {args.seed} \t {args.N} \t {args.M} \t {args.P} \t {args.R} \t {args.solver} \t {running_time} \t {num_branches}"
+            # log_file.write(line)
+            # log_file.close()
 
 
     def __call__(self):

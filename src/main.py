@@ -1,11 +1,11 @@
 from model.cp_opt import CPOpt, add_cpo_args
-from model.cp_penalty_opt import CPPenaltyOpt
+from model.cp_penalty_opt import CPPenaltyOpt, add_cpo_penalty_args
 from model.cp_sat import add_cpsat_args
 
 from slurm.cpo_exec import CPO_Executor
 
 from utils import general_multiplication_tensor
-from cp_formulation import CP_general
+# from cp_formulation import CP_general
 
 import os
 import uuid
@@ -71,7 +71,7 @@ def parse_args():
     add_cpsat_args(parser_sat)
 
     parser_cpo_penalty_opt = subparsers.add_parser('cpo-penalty-opt', help='IBM CP Optimizer')
-    add_cpsat_args(parser_cpo_penalty_opt)
+    add_cpo_penalty_args(parser_cpo_penalty_opt)
 
     args = parser.parse_args()
     args_dict = vars(args)
@@ -82,29 +82,6 @@ def parse_args():
 
 if __name__ == "__main__":
     args, solver_args = parse_args()
-
-    if (args.solver == 'cpo'):
-        cp_model = CPOpt(args.N, args.M, args.P, args.R)
-        cp_model.solver_params(solver_args)
-        sol = cp_model.solve(validate=True)
-
-        print(sol)
-    
-    elif (args.solver == 'cpo-penalty-opt'):
-        cp_model = CPPenaltyOpt(args.N, args.M, args.P, args.R)
-        cp_model.solver_params(solver_args)
-        sol = cp_model.solve(validate=True)
-
-        print(sol)
-
-        # write stats to log_file
-        log_file = open("/home/liucha90/workplace/Matrix-Mult-CP/log/cp_penalty_opt_log.txt","a")
-        now = datetime.now()
-        running_time = sol.get_solve_time()
-        num_branches = '-'
-        line = f"\n{now} \t {args.time_limit} \t {args.seed} \t {args.N} \t {args.M} \t {args.P} \t {args.R} \t {args.solver} \t {running_time} \t {num_branches}"
-        log_file.write(line)
-        log_file.close()
 
     subfolder = f"{args.N}x{args.M}x{args.P}_{args.R}_{calendar.month_abbr[datetime.now().month]}{datetime.today().strftime('%d_%H:%M:%S')}"#_{uuid.uuid4().hex[:8]}"
     args.output_dir = os.path.join(args.output_dir, subfolder)
@@ -120,12 +97,15 @@ if __name__ == "__main__":
     executor = submitit.AutoExecutor(folder=args.output_dir)
 
     executor.update_parameters(
-        name=f"mult_{args.N}_{args.M}_{args.P}_{args.R}",
-#        slurm_account="def-khalile2",
+        name=f"mult_{args.solver}_{args.N}_{args.M}_{args.P}_{args.R}",
+        slurm_account="def-khalile2",
         tasks_per_node=args.n_seeds,
         cpus_per_task=args.n_workers,
         timeout_min= args.timeout + 1, # Giveing solver a minute to terminate gracefully
         mem_gb=15,
+        additional_parameters={"mail-user":"changy.liu@mail.utoronto.ca","mail-type":"ALL"},
+        # "mail-user"="changy.liu@mail.utoronto.ca",
+        # "mail-type"="ALL",
         # slurm_partition=args.slurm_partition
         # gpus_per_node=args.slurm_ngpus,
         # nodes=3 #args.slurm_nnodes,
