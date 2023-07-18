@@ -1,4 +1,5 @@
 from model.cp_opt import CPOpt, add_cpo_args
+<<<<<<< HEAD
 from model.cp_penalty_opt import CPPenaltyOpt, add_cpo_penalty_args
 from model.cp_sat import add_cpsat_args
 
@@ -21,16 +22,43 @@ from datetime import datetime
 # log_file_name = '/home/liucha90/workplace/Matrix-Mult-CP/cp_penalty_opt' + str(datetime.now()) + '.txt'
 # f = open(log_file_name, 'w')
 # sys.stdout = f
+=======
+from model.cp_penalty_opt import CPPenaltyOpt
+from model.cp_sat import add_cpsat_args
+
+
+from utils import general_multiplication_tensor
+from cp_formulation import CP_general
+
+import argparse
+
+>>>>>>> 78285e7fea211b01bfa8214d774d75f81808b2e6
 
 def parse_args():
     parser = argparse.ArgumentParser()
 
+<<<<<<< HEAD
+=======
+     # '''# arguments pertaining to CPLEX CP parameters
+    # parser.add_argument('time_limit', type=int)
+    # parser.add_argument('seed', type=int)
+
+    # parser.add_argument('valid_ineq', type=bool)
+    # parser.add_argument('symmetry',   type=bool)
+    # parser.add_argument('inexact_ineq', type=bool)
+
+    # # arguments pertaining logging and solution saving directory
+    # # all files (raw log, stats file, npy files for U,V,W) pertaining to the run will be stored in run_directory
+    # parser.add_argument('run_directory', type=str)'''
+
+>>>>>>> 78285e7fea211b01bfa8214d774d75f81808b2e6
     # arguments pertaining to matrix multiplication case
     parser.add_argument('N', type=int)
     parser.add_argument('M', type=int)
     parser.add_argument('P', type=int)
     parser.add_argument('R', type=int)
 
+<<<<<<< HEAD
     parser.add_argument('--valid_ineq', action='store_true', help="Include valid equalities in the CP model.")
     parser.add_argument('--no-valid_ineq', dest='valid_ineq', action='store_false')
     parser.set_defaults(valid_ineq=False)
@@ -61,6 +89,8 @@ def parse_args():
     parser.add_argument('--timeout', type=int, default=10, help="Timeout for the run in minutes. (Default: 10)")
 
 
+=======
+>>>>>>> 78285e7fea211b01bfa8214d774d75f81808b2e6
     subparsers = parser.add_subparsers(help='CP Solver', dest="solver")
     subparsers.required = True
 
@@ -70,9 +100,12 @@ def parse_args():
     parser_sat = subparsers.add_parser('sat', help='OR-Tools CP_SAT Solver')
     add_cpsat_args(parser_sat)
 
+<<<<<<< HEAD
     parser_cpo_penalty_opt = subparsers.add_parser('cpo-penalty-opt', help='IBM CP Optimizer')
     add_cpo_penalty_args(parser_cpo_penalty_opt)
 
+=======
+>>>>>>> 78285e7fea211b01bfa8214d774d75f81808b2e6
     args = parser.parse_args()
     args_dict = vars(args)
     solver_args = {arg[4:]: args_dict[arg] for arg in args_dict if arg.startswith(args.solver)}

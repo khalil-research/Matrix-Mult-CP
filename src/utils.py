@@ -16,6 +16,7 @@ def general_multiplication_tensor(N, M, P):
                T[a_index, b_index, c_index] = 1
    return T
 
+<<<<<<< HEAD
 
 def cyclic_multiplication_tensor(N=2):
     """Multiplication tensor.
@@ -41,6 +42,8 @@ def cyclic_multiplication_tensor(N=2):
 
     return T
 
+=======
+>>>>>>> 78285e7fea211b01bfa8214d774d75f81808b2e6
 def expand_pd(U, V, W):
     """Expand a polyadic decomposition.
     The polyadic expansion T of the factor matrices U, V, and W is defined by:
