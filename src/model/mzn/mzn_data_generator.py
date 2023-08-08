@@ -1,12 +1,13 @@
 import json 
 import numpy as np
+import argparse
 
 import sys
 sys.path.insert(0,'/Users/chang/PhD_workplace/Matrix-Mult-CP/src')
 
 from utils import general_multiplication_tensor
 
-def mzn_data_generator(N,M,P,R):
+def mzn_data_generator(N,M,P,R,dest):
     data_dict = {}
     data_dict['N'] = N
     data_dict['M'] = M
@@ -16,27 +17,19 @@ def mzn_data_generator(N,M,P,R):
     data_dict['Tlist'] = T.tolist()
 
     file_name = f'fmm_{N}_{M}_{P}_{R}.json'
+    file_location = dest+'/'+file_name
 
-    with open(file_name, "w") as outfile:
+    with open(file_location, "w") as outfile:
         json.dump(data_dict, outfile)
 
 if __name__ == "__main__":
-    input_data_list = [[1,1,1,1],
-                        [1,1,2,2],
-                        [1,2,1,2],
-                        [1,1,3,3],
-                        [1,3,1,3],
-                        [1,2,2,4],
-                        [2,1,2,4],
-                        [1,2,3,6],
-                        [1,3,2,6],
-                        [2,1,3,6],
-                        [2,2,2,7],
-                        [1,3,3,9],
-                        [3,1,3,9],
-                        [2,2,3,11],
-                        [2,3,2,11],
-                        [2,2,4,14],
-                        [3,3,3,23]]
-    for d in input_data_list:
-        mzn_data_generator(d[0],d[1],d[2],d[3])
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("-N", "--N", default=1, type=int, help="N")
+    parser.add_argument("-M", "--M", default=1, type=int, help="M")
+    parser.add_argument("-P", "--P", default=1, type=int, help="P")
+    parser.add_argument("-R", "--R", default=1, type=int, help="R")
+    parser.add_argument("-dest", "--dest", help="datafile destination location")
+    args = vars(parser.parse_args())
+
+    mzn_data_generator(args['N'],args['M'],args['P'],args['R'], args['dest'])
