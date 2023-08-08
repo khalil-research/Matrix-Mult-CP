@@ -3,7 +3,7 @@ import numpy as np
 import argparse
 
 import sys
-sys.path.insert(0,'/Users/chang/PhD_workplace/Matrix-Mult-CP/src')
+sys.path.insert(0,'../..')
 
 from utils import general_multiplication_tensor
 
