@@ -13,7 +13,7 @@ python mzn_data_generator.py -N -M -P -R -dest
 Time limit is set to 600 seconds.
 
 Size (n,m,p) | Rank | Time (gecode) | Time (chuffed) | Time (cbc) | Time (cp) | Time (mip)
---- | --- | --- | --- | --- | --- | --- 
+:--- | :--- | ---: | ---: | ---: | ---: | ---: 
 (1,1,1) | 1 | 0.00 | 0.00 | 0.00 | 0.00 | 0.01
 (1,1,2) | 2 | 0.00 | 0.00 | 0.20 | 0.00 | 0.22
 (1,1,3) | 3 | 0.00 | 0.00 | 2.65 | 0.00 | 2.63
