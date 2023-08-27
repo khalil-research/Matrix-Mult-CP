@@ -3,7 +3,7 @@ import numpy as np
 import argparse
 
 import sys
-sys.path.insert(0,'../..')
+sys.path.insert(0,'../src')
 
 from utils import general_multiplication_tensor
 
