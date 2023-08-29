@@ -12,3 +12,6 @@
     - e.g.: `python src/main.py 2 2 2 7 cpo --seed 5`
 
 Look under `experiments/readme.md` for a complete list of commands to reproduce the results from paper.
+
+## Resources
+The work was presented at [CP2023](https://cp2023.a4cp.org/), the slides of the presentation are available in this repo as [FMMWT-cp2023-final.pdf](https://github.com/khalil-research/Matrix-Mult-CP/blob/main/FMMWT-cp2023-final.pdf).
