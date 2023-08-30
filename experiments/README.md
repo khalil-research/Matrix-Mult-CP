@@ -30,7 +30,7 @@ python main.py 2 3 2 11 --n_seeds 5 --n_workers 8 --timeout 120 --output_dir ../
 **Exp 2:** Sparsity Constraints & Cyclic Invariance
 ```
 python main.py 2 2 2 7  --n_seeds 5 --n_workers 20 --timeout 120 --cyclic_invar  --inexact_ineq 6 4  --output_dir ../logs/2 cpo
-python main.py 2 2 4 14 --n_seeds 5 --n_workers 20 --timeout 2880 --cyclic_invar  --inexact_ineq 11 7  --output_dir ../logs/2 cpo
+python main.py 2 2 4 14 --n_seeds 5 --n_workers 20 --timeout 2880 --inexact_ineq 11 7  --output_dir ../logs/2 cpo
 python main.py 3 3 3 23 --n_seeds 5 --n_workers 20 --timeout 2880 --cyclic_invar --inexact_ineq 9 10 --output_dir ../logs/2 cpo
 ```
 
